@@ -1,5 +1,5 @@
 <div class="wor">
-    <div class="card" *ngFor="let pokemon of pokemonsBuscados">
+    <div class="card" *ngFor="let pokemon of pokemonsBuscados | paginate: { itemsPerPage: 10, currentPage: p }">
         <div class="card-body">
             <h2 class="card-title">{{ pokemon.name }}</h2>
             <div class="card-text">
@@ -13,4 +13,4 @@
         </div>
     </div>
 </div>
-
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

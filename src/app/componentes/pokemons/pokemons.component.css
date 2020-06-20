@@ -19,10 +19,6 @@
     text-transform: capitalize;
 }
 
-.pokeTypes{
-    list-style: none;
-}
-
 .card-captured{
     margin-bottom: 10px;
     border-top: 1px solid rgba(128, 128, 128, 0.877);
@@ -43,4 +39,8 @@
 
 input[type="checkbox"]:checked{
     background-color: green;
+}
+
+pagination-controls{
+    text-align: center;
 }

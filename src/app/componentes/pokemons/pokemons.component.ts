@@ -11,6 +11,7 @@ export class PokemonsComponent implements OnInit {
 
   pokemons:Pokemon[] = [];
   pokemonsBuscados:Pokemon[] = [];
+  p: number = 1;
 
   constructor(private pokemonService:PokemonService) { }
 
