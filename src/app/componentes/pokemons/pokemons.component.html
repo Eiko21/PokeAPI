@@ -1,0 +1,16 @@
+<div class="wor">
+    <div class="card" *ngFor="let pokemon of pokemonsBuscados">
+        <div class="card-body">
+            <h2 class="card-title">{{ pokemon.name }}</h2>
+            <div class="card-text">
+                <p><b>Tipo:</b> {{ pokemon.type }}</p>
+                <p><b>Habilidad:</b> {{ pokemon.ability }}</p>
+            </div>
+        </div>
+        <div class="card-captured">
+            <input type="checkbox" [(ngModel)]="pokemon.captured">
+                <span [class.capturado]="pokemon.captured==true">Capturado</span>
+        </div>
+    </div>
+</div>
+

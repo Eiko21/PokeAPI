@@ -1,0 +1,46 @@
+.wor{
+    width: 100%;
+    text-align: center;
+}
+
+.card{
+    width: 400px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.card:hover
+{ 
+  background: #1976d2;
+  color: white;
+}
+
+.card-title{
+    text-transform: capitalize;
+}
+
+.pokeTypes{
+    list-style: none;
+}
+
+.card-captured{
+    margin-bottom: 10px;
+    border-top: 1px solid rgba(128, 128, 128, 0.877);
+}
+
+.card:hover .card-captured{
+    border-top: 1px solid white;
+}
+
+.card-captured input,span{
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.capturado{
+    font-weight: bold;
+}
+
+input[type="checkbox"]:checked{
+    background-color: green;
+}
