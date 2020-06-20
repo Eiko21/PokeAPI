@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { Pokemon } from '../../models/Pokemon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemons',
@@ -29,6 +30,8 @@ export class PokemonsComponent implements OnInit {
           if(p['abilities'].length > 1){
             pokemon.ability = p['abilities'].map(ability => ability.ability.name).join();
           }else if(p['abilities'].length == 1) pokemon.ability = p['abilities'][0].ability.name;
+          
+          pokemon.move =p['moves'];
         });
       });
 

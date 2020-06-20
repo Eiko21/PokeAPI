@@ -1,10 +1,11 @@
 <div class="wor">
-    <div class="card" *ngFor="let pokemon of pokemonsBuscados | paginate: { itemsPerPage: 10, currentPage: p }">
+    <div class="card" *ngFor="let pokemon of pokemonsBuscados | paginate: { itemsPerPage: 9, currentPage: p }">
         <div class="card-body">
             <h2 class="card-title">{{ pokemon.name }}</h2>
             <div class="card-text">
                 <p><b>Tipo:</b> {{ pokemon.type }}</p>
                 <p><b>Habilidad:</b> {{ pokemon.ability }}</p>
+                <a [routerLink]="['/moves']" [state]="{id:1, pokemon:pokemon}">Ver sus movimientos >></a>
             </div>
         </div>
         <div class="card-captured">

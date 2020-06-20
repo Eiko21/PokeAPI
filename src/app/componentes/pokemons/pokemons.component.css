@@ -27,6 +27,9 @@
 .card:hover .card-captured{
     border-top: 1px solid white;
 }
+.card:hover a{
+    color: white;
+}
 
 .card-captured input,span{
     margin-left: 5px;

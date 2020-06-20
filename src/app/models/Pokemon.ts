@@ -5,4 +5,5 @@ export class Pokemon{
     type?:string;
     ability?:string;
     captured?:false;
+    move?:string;
 }
