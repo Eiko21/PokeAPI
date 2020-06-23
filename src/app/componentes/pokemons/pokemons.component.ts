@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { Pokemon } from '../../models/Pokemon';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pokemons',
@@ -35,7 +37,7 @@ export class PokemonsComponent implements OnInit {
         });
       });
 
-      this.pokemonService.currentPokemon.subscribe(po => {
+      this.pokemonService.currentPokemon.pipe(take(1)).subscribe(po => {
         this.pokemonsBuscados = this.pokemons.filter(pk => {
           return pk.name.includes(po.toLocaleLowerCase()) || pk.type.includes(po);
         });
@@ -43,8 +45,8 @@ export class PokemonsComponent implements OnInit {
     });
   }
 
-  ngOnDestroy(){
-    
+  ngOnDestroy(): void {
+    this.pokemonService.getPokemons().unsubscribe();
   }
 
   capturePokemon(pokemonName:string):void{
