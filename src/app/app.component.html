@@ -1,7 +1,13 @@
 <div class="toolbar" role="banner">
   <img width="60" alt="Pokemon Logo" src="assets\imgs\pokeLogo.png"/>
-  <span>PokeAPI</span>
+  <span><a [routerLink]="['/']">PokeAPI</a></span>
+    <div>
+      <a id="loginbtn" [routerLink]="['/login']">Iniciar sesión</a>
+    </div>
     <div class="spacer"></div>
+    <div>
+      <a id="capturasbtn" [routerLink]="['/tuspokemons']">Tus pokémons</a>
+    </div>
     <app-search></app-search>
 </div>
 
