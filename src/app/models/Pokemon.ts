@@ -4,6 +4,6 @@ export class Pokemon{
     url:string;
     type?:string;
     ability?:string;
-    captured?:false;
+    captured?:boolean;
     move?:string;
 }

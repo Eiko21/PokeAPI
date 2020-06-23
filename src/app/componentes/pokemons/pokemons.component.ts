@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { Pokemon } from '../../models/Pokemon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemons',
@@ -11,14 +12,14 @@ export class PokemonsComponent implements OnInit {
 
   pokemons:Pokemon[] = [];
   pokemonsBuscados:Pokemon[] = [];
+  pokemonsCapturados:Pokemon[] = [];
   p: number = 1;
 
-  constructor(private pokemonService:PokemonService) { }
+  constructor(private pokemonService:PokemonService, private router:Router) { }
 
-  ngOnInit(): void {
-    this.pokemonService.getAllPokemons().subscribe(pokemons => {
-      this.pokemons = pokemons['results'];
-      this.pokemons.forEach(pokemon => { pokemon.captured = false; });     
+  ngOnInit(): void {    
+    this.pokemonService.getPokemons().subscribe(pokemons => {  
+      this.pokemons = pokemons;
 
       this.pokemons.forEach(pokemon => {
         this.pokemonService.getSpecificPokemon(pokemon.url).subscribe(p => {
@@ -38,10 +39,16 @@ export class PokemonsComponent implements OnInit {
         this.pokemonsBuscados = this.pokemons.filter(pk => {
           return pk.name.includes(po.toLocaleLowerCase()) || pk.type.includes(po);
         });
-      });
-
+      });    
     });
+  }
+
+  ngOnDestroy(){
     
+  }
+
+  capturePokemon(pokemonName:string):void{
+    this.pokemonService.setPokemonCaptureToTrue(pokemonName);
   }
 
 }

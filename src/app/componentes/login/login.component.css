@@ -1,0 +1,33 @@
+.login-wor{
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15%;
+}
+
+.card-title {
+    margin-bottom: 1.75rem;
+    padding: 2%;
+}
+
+form{
+    margin: 0 5%;
+    padding: 3% 10%;
+}
+
+form input[type="submit"]{
+    background-color: #1976d2; 
+    border: none;
+    color: white;
+    padding: 10px 13px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 3%;
+    margin-left: 10%;
+    margin-top: 10px;
+}

@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="card-captured">
-            <input type="checkbox" [(ngModel)]="pokemon.captured">
+            <input type="checkbox" [(ngModel)]="pokemon.captured" (click)="capturePokemon(pokemon.name)">
                 <span [class.capturado]="pokemon.captured==true">Capturado</span>
         </div>
     </div>

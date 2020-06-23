@@ -1,0 +1,22 @@
+<h2 class="card-title">Tus pokémons</h2>
+<div class="wor" *ngIf="pokemons.length == 0">
+    <div class="cardvacio">
+        <div class="card-body">
+            <div class="card-text">
+                <p>No tiene ningún pokémon</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wor" *ngIf="pokemons.length > 0">
+    <div class="card" *ngFor="let pokemon of pokemons">
+        <div class="card-body">
+            <h2 class="card-title">{{ pokemon.name }}</h2>
+            <div class="card-text">
+                <p><b>Tipo:</b> {{ pokemon.type }}</p>
+                <p><b>Habilidad:</b> {{ pokemon.ability }}</p>
+                <a [routerLink]="['/moves']" [state]="{id:1, pokemon:pokemon}">Ver sus movimientos >></a>
+            </div>
+        </div>
+    </div>
+</div>

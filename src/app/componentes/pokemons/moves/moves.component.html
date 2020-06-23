@@ -1,8 +1,12 @@
-<div class="card">
-    <div class="card-body">
-        <h2 class="card-title">Movimientos</h2>
-        <div class="card-text" *ngFor="let move of pokemon.move">
-            <p>{{ move.move.name }}</p>
+<h2 class="card-title">Movimientos</h2>
+<div class="cards-moves">
+    <div class="card" *ngFor="let move of pokemon.move">
+        <div class="card-body">
+            <div class="card-text">
+                <p>{{ move.move.name }}</p>
+            </div>
         </div>
     </div>
 </div>
+<!-- | paginate: { itemsPerPage: 12, currentPage: p } -->
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->

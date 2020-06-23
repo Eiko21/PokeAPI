@@ -4,7 +4,8 @@
 }
 
 #inputsearch {
-    width: 130px;
+    /* width: 130px; */
+    width: 90%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -15,7 +16,7 @@
     padding: 12px 20px 12px 10px;
 }
 
-#inputsearch:focus {
+/* #inputsearch:focus {
   width: 90%;
   margin-right:16px;
-}
+} */
