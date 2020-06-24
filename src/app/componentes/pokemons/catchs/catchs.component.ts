@@ -19,4 +19,8 @@ export class CatchsComponent implements OnInit {
       this.pokemons = pkm.filter(p => p.captured == true);
     });
   }
+
+  capturePokemon(pokemonName:string):void{
+    this.pokemonService.setPokemonCaptureToFalse(pokemonName);
+  }
 }

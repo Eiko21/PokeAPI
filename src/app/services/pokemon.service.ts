@@ -47,5 +47,9 @@ export class PokemonService {
     this.myPokemons.value.forEach(p => { if(p.name == pokemonName) p.captured = true; });
     this.myPokemons.next(this.myPokemons.value);
   }
+  setPokemonCaptureToFalse(pokemonName:string):void{
+    this.myPokemons.value.forEach(p => { if(p.name == pokemonName) p.captured = false; });
+    this.myPokemons.next(this.myPokemons.value);
+  }
 
 }

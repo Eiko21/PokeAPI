@@ -33,21 +33,27 @@ export class PokemonsComponent implements OnInit {
             pokemon.ability = p['abilities'].map(ability => ability.ability.name).join();
           }else if(p['abilities'].length == 1) pokemon.ability = p['abilities'][0].ability.name;
           
-          pokemon.move =p['moves'];
+          pokemon.move = p['moves'];
+          pokemon.img = p['sprites']['front_default'];
         });
       });
 
-      this.pokemonService.currentPokemon.pipe(take(1)).subscribe(po => {
+      this.pokemonService.currentPokemon.subscribe(po => {
         this.pokemonsBuscados = this.pokemons.filter(pk => {
           return pk.name.includes(po.toLocaleLowerCase()) || pk.type.includes(po);
         });
       });    
+      // this.pokemonService.currentPokemon.pipe(take(1)).subscribe(po => {
+      //   this.pokemonsBuscados = this.pokemons.filter(pk => {
+      //     return pk.name.includes(po.toLocaleLowerCase()) || pk.type.includes(po);
+      //   });
+      // });    
     });
   }
 
-  ngOnDestroy(): void {
-    this.pokemonService.getPokemons().unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.pokemonService.getPokemons().unsubscribe();
+  // }
 
   capturePokemon(pokemonName:string):void{
     this.pokemonService.setPokemonCaptureToTrue(pokemonName);

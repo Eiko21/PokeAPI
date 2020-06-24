@@ -6,4 +6,5 @@ export class Pokemon{
     ability?:string;
     captured?:boolean;
     move?:string;
+    img?:string;
 }
